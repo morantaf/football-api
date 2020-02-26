@@ -24,4 +24,9 @@ router.get("/team/:id", (req, res, next) => {
     .catch(next);
 });
 
+router.get("/", (req, res, next) => {
+  console.log("Now I am showing something in the browser!");
+  res.send("Welcome to my backend api");
+});
+
 module.exports = router;
