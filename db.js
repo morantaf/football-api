@@ -9,4 +9,4 @@ db.sync()
   .then(() => console.log("Database synchronized"))
   .catch(err => console.error(err));
 
-module.export = db;
+module.exports = db;
