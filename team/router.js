@@ -10,11 +10,17 @@ router.get("/team", (req, res, next) => {
 });
 
 router.post("/team", (req, res, next) => {
-  console.log("post request body", req.body);
   Team.create(req.body)
     .then(team => {
       res.json(team);
     })
+    .catch(next);
+});
+
+router.get("/team/:id", (req, res, next) => {
+  console.log("req.params.id :", typeof req.params.id);
+  Team.findByPk(req.params.id)
+    .then(team => res.json(team))
     .catch(next);
 });
 
